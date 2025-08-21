@@ -24,15 +24,15 @@ public class Pratica01DevSuperiorApplication implements CommandLineRunner {
 		Integer code = input.nextInt();
 		Double basic = input.nextDouble();
 		Double discount = input.nextDouble();
-
 		Order order = new Order(code, basic, discount);
 
-		ShippingService  shippingService = new ShippingService();
+		ShippingService shippingService = new ShippingService();
 		OrderService orderService = new OrderService(shippingService);
 
 		Double total = orderService.total(order);
 
 		System.out.println("Código do pedido: " + order.getCode() +
+							System.lineSeparator() +
 							"Valor total: " + total);
 
 		input.close();
