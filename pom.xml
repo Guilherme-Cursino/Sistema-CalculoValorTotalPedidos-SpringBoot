@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>cursino.guilherme</groupId>
-	<artifactId>pratica01DevSuperior</artifactId>
+	<artifactId>desafio01DevSuperior</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pratica01DevSuperior</name>
-	<description>pratica01DevSuperior</description>
+	<name>desafio01DevSuperior</name>
+	<description>desafio01DevSuperior</description>
 	<url/>
 	<licenses>
 		<license/>

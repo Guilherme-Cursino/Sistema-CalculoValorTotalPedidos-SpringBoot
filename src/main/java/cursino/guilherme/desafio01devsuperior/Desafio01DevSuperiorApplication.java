@@ -1,8 +1,8 @@
-package cursino.guilherme.pratica01devsuperior;
+package cursino.guilherme.desafio01devsuperior;
 
-import cursino.guilherme.pratica01devsuperior.entities.Order;
-import cursino.guilherme.pratica01devsuperior.services.OrderService;
-import cursino.guilherme.pratica01devsuperior.services.ShippingService;
+import cursino.guilherme.desafio01devsuperior.entities.Order;
+import cursino.guilherme.desafio01devsuperior.services.OrderService;
+import cursino.guilherme.desafio01devsuperior.services.ShippingService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Scanner;
 
 @SpringBootApplication
-public class Pratica01DevSuperiorApplication implements CommandLineRunner {
+public class Desafio01DevSuperiorApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Pratica01DevSuperiorApplication.class, args);
+		SpringApplication.run(Desafio01DevSuperiorApplication.class, args);
 	}
 
 	@Override

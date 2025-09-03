@@ -1,6 +1,6 @@
-package cursino.guilherme.pratica01devsuperior.services;
+package cursino.guilherme.desafio01devsuperior.services;
 
-import cursino.guilherme.pratica01devsuperior.entities.Order;
+import cursino.guilherme.desafio01devsuperior.entities.Order;
 import org.springframework.stereotype.Service;
 
 @Service

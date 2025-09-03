@@ -1,4 +1,4 @@
-package cursino.guilherme.pratica01devsuperior.entities;
+package cursino.guilherme.desafio01devsuperior.entities;
 
 public class Order {
     private Integer code;

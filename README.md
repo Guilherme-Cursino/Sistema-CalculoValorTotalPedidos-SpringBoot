@@ -2,17 +2,17 @@
 
 ## Desenvolver um sistema em Java com Spring Boot para calcular o valor total de um pedido, considerando desconto e frete.
 
-As especificações incluem:
+### As especificações incluem:
 
 ## Cálculo: 
   O valor total é o valor básico do pedido com desconto, mais o frete.
 
 ## Regras de Frete:
-  Abaixo de R$ 100,00: Frete de R$ 20,00.
+  Abaixo de 100,00 reais: Frete de 20,00 reais.
   
-  De R$ 100,00 a R$ 200,00 (exclusivo): Frete de R$ 12,00.
+  De 100,00 reais a 200,00 reais (exclusivo): Frete de 12,00 reais.
   
-  R$ 200,00 ou mais: Frete Grátis.
+  200,00 reais ou mais: Frete Grátis.
 
 ## Estrutura:
   Um pedido deve ser representado por um objeto Order com code (Integer), basic (Double) e discount (Double).
