@@ -1,6 +1,6 @@
 # Desafio proposto no treinamento Java Spring Professional da DevSuperior, referente ao módulo Componentes e Injeção de Dependência, em que era necessário:
 
-## Desenvolver um sistema em Java com Spring Boot para calcular o valor total de um pedido, considerando desconto e frete.
+## Desenvolver um sistema para calcular o valor total de um pedido, considerando regras de desconto e frete.
 
 ### As especificações incluem:
 
@@ -14,8 +14,19 @@
   
   200,00 reais ou mais: Frete Grátis.
 
+## Tecnologias Utilizadas
+
+* **Spring Boot:** Framework para desenvolvimento de aplicações Java.
+* **Maven:** Gerenciador de dependências.
+* **Java:** Linguagem de programação.
+
 ## Estrutura:
-  Um pedido deve ser representado por um objeto Order com code (Integer), basic (Double) e discount (Double).
+
+A entidade `Order` possui os seguintes atributos:
+
+* `code`: Integer
+* `basic`: Double
+* `discount`: Double
 
 ### Componentes/Serviços: A lógica de cálculo deve ser dividida em:
   OrderService: Responsável por operações relacionadas a pedidos, com o método total(order: Order): double.
