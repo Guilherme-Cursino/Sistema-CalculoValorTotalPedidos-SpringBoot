@@ -21,6 +21,3 @@
   OrderService: Responsável por operações relacionadas a pedidos, com o método total(order: Order): double.
   
   ShippingService: Responsável por operações relacionadas a frete, com o método shipment(order: Order): double.
-
-## Implementação: 
-  Em Java com Spring Boot, utilizando a anotação @Service para registrar os componentes. A saída deve ser exibida no log do terminal.
