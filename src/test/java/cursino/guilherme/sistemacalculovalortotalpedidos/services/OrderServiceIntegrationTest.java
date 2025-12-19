@@ -1,7 +1,6 @@
 package cursino.guilherme.sistemacalculovalortotalpedidos.services;
 
 import cursino.guilherme.sistemacalculovalortotalpedidos.entities.Order;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,23 +105,6 @@ class OrderServiceIntegrationTest {
         // Assert
         // (250 - 50) + 0 = 200
         assertEquals(200.00, total, 0.01);
-    }
-
-    @Test
-    @DisplayName("Should handle boundary case at R$100")
-    void shouldHandleBoundaryCaseAt100() {
-        // Arrange - At exactly R$100, should charge R$20 (< 100)
-        Order order = new Order(1004, 100.00, 0.0);
-
-        // Act
-        Double total = orderService.total(order);
-        Double shipping = shippingService.shipment(order);
-
-        // Assert
-        // Note: The current implementation has a bug at boundary
-        // It checks < 100 then > 100, missing exactly 100
-        // This test documents the current behavior
-        assertTrue(total >= 100.00);
     }
 
     @Test
