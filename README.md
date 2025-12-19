@@ -1,34 +1,181 @@
-# Desafio proposto no treinamento Java Spring Professional da DevSuperior, referente ao módulo Componentes e Injeção de Dependência, em que era necessário:
+# Sistema de Cálculo de Valor Total de Pedidos
 
-## Desenvolver um sistema para calcular o valor total de um pedido, considerando regras de desconto e frete.
+[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.4-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![Maven](https://img.shields.io/badge/Maven-4.0.0-blue.svg)](https://maven.apache.org/)
 
-### As especificações incluem:
+Sistema desenvolvido em Spring Boot para calcular o valor total de pedidos, aplicando descontos e calculando fretes de acordo com regras de negócio específicas.
 
-## Cálculo: 
-  O valor total é o valor básico do pedido com desconto, mais o frete.
+## 📋 Sobre o Projeto
 
-## Regras de Frete:
-  Abaixo de 100,00 reais: Frete de 20,00 reais.
-  
-  De 100,00 reais a 200,00 reais (exclusivo): Frete de 12,00 reais.
-  
-  200,00 reais ou mais: Frete Grátis.
+Este sistema processa pedidos aplicando as seguintes lógicas:
+- **Cálculo de desconto**: Aplica percentual de desconto sobre o valor básico do pedido
+- **Cálculo de frete**: Determina o custo de envio baseado no valor do pedido
+- **Valor total**: Combina valor com desconto aplicado + frete calculado
 
-## Tecnologias Utilizadas
+### Regras de Negócio
 
-* **Spring Boot:** Framework para desenvolvimento de aplicações Java.
-* **Maven:** Gerenciador de dependências.
-* **Java:** Linguagem de programação.
+#### 💰 Cálculo do Valor Final
+```
+Valor Total = (Valor Básico - Desconto) + Frete
+```
 
-## Estrutura:
+#### 🚚 Regras de Frete
 
-A entidade `Order` possui os seguintes atributos:
+| Valor do Pedido | Custo do Frete |
+|----------------|----------------|
+| Abaixo de R$ 100,00 | R$ 20,00 |
+| Entre R$ 100,00 e R$ 200,00 | R$ 12,00 |
+| R$ 200,00 ou mais | Grátis |
 
-* `code`: Integer
-* `basic`: Double
-* `discount`: Double
+## 🛠️ Tecnologias Utilizadas
 
-### Componentes/Serviços: A lógica de cálculo deve ser dividida em:
-  OrderService: Responsável por operações relacionadas a pedidos, com o método total(order: Order): double.
-  
-  ShippingService: Responsável por operações relacionadas a frete, com o método shipment(order: Order): double.
+- **Java 21** - Linguagem de programação
+- **Spring Boot 3.5.4** - Framework para desenvolvimento de aplicações Java
+- **Maven** - Gerenciador de dependências e build
+- **JUnit 5** - Framework de testes
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── main/
+│   ├── java/cursino/guilherme/sistemacalculovalortotalpedidos/
+│   │   ├── SistemaCalculoValorTotalPedidosApplication.java  # Classe principal
+│   │   ├── entities/
+│   │   │   └── Order.java                                    # Entidade de pedido
+│   │   └── services/
+│   │       ├── OrderService.java                             # Serviço de pedidos
+│   │       └── ShippingService.java                          # Serviço de frete
+│   └── resources/
+│       └── application.properties                            # Configurações da aplicação
+└── test/
+    └── java/cursino/guilherme/sistemacalculovalortotalpedidos/
+        └── SistemaCalculoValorTotalPedidosApplicationTests.java  # Testes
+```
+
+## 📦 Modelo de Dados
+
+### Order (Pedido)
+
+| Atributo | Tipo | Descrição |
+|----------|------|-----------|
+| `code` | Integer | Código identificador do pedido |
+| `basic` | Double | Valor básico do pedido |
+| `discount` | Double | Percentual de desconto (0-100) |
+
+## 🔧 Componentes e Serviços
+
+### OrderService
+Responsável pela lógica de cálculo do valor total do pedido.
+
+**Método principal:**
+- `total(Order order): Double` - Calcula o valor total aplicando desconto e frete
+
+### ShippingService
+Responsável pela lógica de cálculo do frete.
+
+**Método principal:**
+- `shipment(Order order): Double` - Determina o valor do frete baseado no valor do pedido
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+- Java 21 ou superior
+- Maven 3.6+ (ou utilizar o Maven Wrapper incluído no projeto)
+
+### Passos para execução
+
+1. **Clone o repositório**
+```bash
+git clone https://github.com/Guilherme-Cursino/Sistema-CalculoValorTotalPedidos-SpringBoot.git
+cd Sistema-CalculoValorTotalPedidos-SpringBoot
+```
+
+2. **Execute o projeto usando Maven Wrapper**
+```bash
+# No Linux/Mac
+./mvnw spring-boot:run
+
+# No Windows
+mvnw.cmd spring-boot:run
+```
+
+Ou, se tiver o Maven instalado:
+```bash
+mvn spring-boot:run
+```
+
+3. **Interaja com o sistema via console**
+
+O sistema solicitará a entrada de dados via terminal:
+```
+Digite os dados do pedido:
+<código do pedido>
+<valor básico>
+<percentual de desconto>
+```
+
+### Exemplo de uso
+
+**Fluxo de entrada:**
+
+```
+=== SISTEMA DE CÁLCULO DE VALOR TOTAL DE PEDIDOS ===
+
+Digite os dados do pedido:
+Código do pedido: 1034
+Valor básico do pedido (R$): 150.00
+Percentual de desconto (%): 20.0
+```
+
+**Saída esperada:**
+
+```
+========================================
+                 RESULTADO FINAL
+========================================
+Código do pedido:        1034
+Valor básico:            R$ 150,00
+Desconto (%):            20,0%
+Valor do desconto:       R$ 30,00
+Subtotal com desconto:   R$ 120,00
+Frete:                   R$ 12,00
+----------------------------------------
+VALOR TOTAL:             R$ 132,00
+========================================
+```
+
+## 🧪 Executar Testes
+
+```bash
+# Usando Maven Wrapper
+./mvnw test
+
+# Ou com Maven instalado
+mvn test
+```
+
+Mais detalhes em `TESTES.md`.
+
+## 📝 Conceitos Aplicados
+
+- **Injeção de Dependência**: Utilização do Spring Framework para gerenciar dependências entre componentes
+- **Componentização**: Separação de responsabilidades em serviços especializados
+- **Programação Orientada a Objetos**: Encapsulamento de lógica de negócio em classes e métodos
+- **Clean Code**: Código organizado e de fácil manutenção
+
+## 👤 Autor
+
+**Guilherme Cursino**
+
+- GitHub: [@Guilherme-Cursino](https://github.com/Guilherme-Cursino)
+
+## 📄 Licença
+
+Este projeto foi desenvolvido como parte do treinamento Java Spring Professional da DevSuperior.
+
+---
+
+⭐ Se este projeto foi útil para você, considere dar uma estrela!
