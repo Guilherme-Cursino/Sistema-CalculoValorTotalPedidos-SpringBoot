@@ -1,12 +1,8 @@
 # Sistema de Cálculo de Valor Total de Pedidos
 
-[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.4-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![Maven](https://img.shields.io/badge/Maven-4.0.0-blue.svg)](https://maven.apache.org/)
-
 Sistema desenvolvido em Spring Boot para calcular o valor total de pedidos, aplicando descontos e calculando fretes de acordo com regras de negócio específicas.
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
 Este sistema processa pedidos aplicando as seguintes lógicas:
 - **Cálculo de desconto**: Aplica percentual de desconto sobre o valor básico do pedido
@@ -15,12 +11,11 @@ Este sistema processa pedidos aplicando as seguintes lógicas:
 
 ### Regras de Negócio
 
-#### 💰 Cálculo do Valor Final
+#### Cálculo do Valor Final
 ```
 Valor Total = (Valor Básico - Desconto) + Frete
 ```
-
-#### 🚚 Regras de Frete
+#### Regras de Frete
 
 | Valor do Pedido | Custo do Frete |
 |----------------|----------------|
@@ -28,14 +23,14 @@ Valor Total = (Valor Básico - Desconto) + Frete
 | Entre R$ 100,00 e R$ 200,00 | R$ 12,00 |
 | R$ 200,00 ou mais | Grátis |
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Java 21** - Linguagem de programação
 - **Spring Boot 3.5.4** - Framework para desenvolvimento de aplicações Java
 - **Maven** - Gerenciador de dependências e build
 - **JUnit 5** - Framework de testes
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 src/
@@ -54,7 +49,7 @@ src/
         └── SistemaCalculoValorTotalPedidosApplicationTests.java  # Testes
 ```
 
-## 📦 Modelo de Dados
+## Modelo de Dados
 
 ### Order (Pedido)
 
@@ -64,7 +59,7 @@ src/
 | `basic` | Double | Valor básico do pedido |
 | `discount` | Double | Percentual de desconto (0-100) |
 
-## 🔧 Componentes e Serviços
+## Componentes e Serviços
 
 ### OrderService
 Responsável pela lógica de cálculo do valor total do pedido.
@@ -78,7 +73,7 @@ Responsável pela lógica de cálculo do frete.
 **Método principal:**
 - `shipment(Order order): Double` - Determina o valor do frete baseado no valor do pedido
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Pré-requisitos
 
@@ -147,7 +142,7 @@ VALOR TOTAL:             R$ 132,00
 ========================================
 ```
 
-## 🧪 Executar Testes
+## Executar Testes
 
 ```bash
 # Usando Maven Wrapper
@@ -159,23 +154,13 @@ mvn test
 
 Mais detalhes em `TESTES.md`.
 
-## 📝 Conceitos Aplicados
+## Conceitos Aplicados
 
 - **Injeção de Dependência**: Utilização do Spring Framework para gerenciar dependências entre componentes
 - **Componentização**: Separação de responsabilidades em serviços especializados
 - **Programação Orientada a Objetos**: Encapsulamento de lógica de negócio em classes e métodos
 - **Clean Code**: Código organizado e de fácil manutenção
 
-## 👤 Autor
+## Autor
 
-**Guilherme Cursino**
-
-- GitHub: [@Guilherme-Cursino](https://github.com/Guilherme-Cursino)
-
-## 📄 Licença
-
-Este projeto foi desenvolvido como parte do treinamento Java Spring Professional da DevSuperior.
-
----
-
-⭐ Se este projeto foi útil para você, considere dar uma estrela!
+**Guilherme Cursino** - [@Guilherme-Cursino](https://github.com/Guilherme-Cursino)
