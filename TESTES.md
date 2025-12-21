@@ -34,8 +34,3 @@ Documentação consolidada da suíte de testes do projeto.
 
 ## ⏱️ Tempo de execução
 A suíte completa leva ~2–3 segundos em ambiente local com Java 21.
-
-## 🛠️ Dicas rápidas
-- Execute os testes antes de qualquer deploy ou entrega.
-- Use o perfil `test` apenas para a suíte; o `CommandLineRunner` não roda nesse perfil.
-- Para falhas intermitentes, limpe o cache: `./mvnw clean test`.
